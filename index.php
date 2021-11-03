@@ -1,15 +1,26 @@
 <?php
+include './include/connection.php';
+include './include/form.php';
+
+$sql = 'SELECT * FROM users';
+$result = mysqli_query($connection, $sql);
+$users = mysqli_fetch_all($result, MYSQLI_ASSOC); // get table from database and convert it to array
+
+// print_r() executes the scripts in database
+// echo '<pre>';
+// htmlspecialchars(print_r($users));
+// echo '</pre>';
+
+// foreach ($users as $key => $user) {
+//     // script out database as a htmlspecialchars (string)
+//     echo htmlspecialchars("$key => {$user['firstName']}") . "<br/>";
+// }
 
 
-$connection =  mysqli_connect('localhost', 'root', 'root', 'front_end_back_end_project');
+mysqli_free_result($result); // memory free variables
+mysqli_close($connection);
 
-$firstName = $_POST['firstName'];
-$lastName = $_POST['lastName'];
-$email = $_POST['email'];
 
-if (isset($_POST['submit'])) {
-    echo $firstName . ' / ' . $lastName . ' / ' . $email;
-}
 
 ?>
 
@@ -35,11 +46,20 @@ STEPS:
 
 <body>
     <form action="./index.php" method="POST">
-        <input type="text" name="firstName" id="firstName" autocomplete="off" required value="test" placeholder="first name" />
-        <input type="text" name="lastName" id="lastName" autocomplete="off" required value="test" placeholder="last name" />
-        <input type="email" name="email" id="email" autocomplete="off" required value="test@test.test" placeholder="email" />
-        <input type="submit" name="submit" value="submit">
+        <input type="text" name="firstName" id="firstName" autocomplete="off" placeholder="First name" required />
+        <input type="text" name="lastName" id="lastName" autocomplete="off" placeholder="Last name" required />
+        <input type="email" name="email" id="email" autocomplete="off" placeholder="Email" required />
+        <input type="submit" name="submit" value="submit" />
     </form>
+
+    <?php foreach ($users as $key => $user) : ?>
+        <h1>
+            <?php
+            echo htmlspecialchars("{$user['firstName']} " . "{$user['lastName']}");
+            ?>
+        </h1>
+    <?php endforeach; ?>
+
 </body>
 
 </html>
