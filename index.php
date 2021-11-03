@@ -1,4 +1,8 @@
 <?php
+
+
+$connection =  mysqli_connect('localhost', 'root', 'root', 'front_end_back_end_project');
+
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
 $email = $_POST['email'];
