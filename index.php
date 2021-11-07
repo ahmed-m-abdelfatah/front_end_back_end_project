@@ -17,9 +17,10 @@ STEPS:
 
 
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-    <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <div class="col-md-5 p-lg-5 mx-auto my-5" style="min-width: 100%;">
         <h1 class="display-4 fw-normal">أربح مع نور</h1>
         <p class="lead fw-normal">باقي علي فتح التسجيل</p>
+        <h3 id="demo"></h3>
         <p class="lead fw-normal">للسحب علي ربح نسخة مجانية من برنامج</p>
         <a class="btn btn-outline-secondary" href="#">Coming soon</a>
     </div>
@@ -58,14 +59,19 @@ STEPS:
 </div>
 
 
-<?php foreach ($users as $key => $user) : ?>
-    <h1>
-        <?php
-        echo htmlspecialchars("{$user['firstName']} {$user['lastName']}")
-            . "<br/>"
-            . htmlspecialchars("{$user['email']}");
-        ?>
-    </h1>
-<?php endforeach; ?>
+<div class="row mb-5 pb-5">
+    <?php foreach ($users as $key => $user) : ?>
+        <div class="col-sm-6">
+            <div class="card my-3 bg-light">
+                <div class="card-body">
+                    <h5 class="card-title"><?php echo htmlspecialchars("{$user['firstName']} {$user['lastName']}") ?></h5>
+                    <p class="card-text"><?php echo htmlspecialchars("{$user['email']}") ?></p>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+
 
 <?php include_once './parts/footer.php' ?>
