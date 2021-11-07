@@ -23,11 +23,3 @@ let x = setInterval(function () {
     counter.innerHTML = 'لقد وصلت متاخرا';
   }
 }, 1000);
-
-// choose winner ===================================================================================
-const winnerBtn = document.querySelector('#winner');
-const cards = document.querySelector('#cards');
-
-winnerBtn.addEventListener('click', function () {
-  cards.style.display = 'flex';
-});
