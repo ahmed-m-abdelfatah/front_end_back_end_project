@@ -17,22 +17,22 @@ STEPS:
 
 
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-    <div class="col-md-5 p-lg-5 mx-auto my-5" style="min-width: 100%;">
+    <div class="col-md-5 mx-auto my-5">
         <h1 class="display-4 fw-normal">أربح مع نور</h1>
         <p class="lead fw-normal">باقي علي فتح التسجيل</p>
-        <h3 id="demo"></h3>
+        <h3 id="count-down"></h3>
         <p class="lead fw-normal">للسحب علي ربح نسخة مجانية من برنامج</p>
         <a class="btn btn-outline-secondary" href="#">Coming soon</a>
     </div>
 </div>
 
-<!-- <ul class="list-group list-group-flush">
+<ul class="list-group list-group-flush">
     <li class="list-group-item">تابع البث المباشر علي صفحتي بالفيسبوك بالتاريخ المذكور اعلاه</li>
     <li class="list-group-item">ساقوم ببث مباشر لمدة ساعة عن اسئلة و اجوبة حرة للجميع</li>
     <li class="list-group-item">هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</li>
     <li class="list-group-item">هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</li>
     <li class="list-group-item">هذا النص هو مثال لنص يمكن استبداله في نفس المساحة.</li>
-</ul> -->
+</ul>
 
 <div class="position-relative text-center ">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
@@ -58,8 +58,12 @@ STEPS:
     </div>
 </div>
 
+<div class="d-grid gap-2 col-6 mx-auto my-5">
+    <button id="winner" type="button" class="btn btn-primary">اختيار الرابح</button>
+</div>
 
-<div class="row mb-5 pb-5">
+<div id="cards" class="row mb-5 pb-5">
+
     <?php foreach ($users as $key => $user) : ?>
         <div class="col-sm-6">
             <div class="card my-3 bg-light">
