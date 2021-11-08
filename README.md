@@ -1,7 +1,5 @@
 # front_end_back_end_project
 
-## front_end_back_end_project
-
 - https://youtu.be/6hgBFDTTwEk
 
 ## php
